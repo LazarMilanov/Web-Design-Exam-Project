@@ -1,0 +1,87 @@
+body {
+    background: #ffffff !important;
+}
+  
+h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+}
+
+nav {
+    width: 100% !important;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.navbar-collapse {
+    margin-left: 30px;
+}
+
+.navbar-brand {
+    font-size: 25px;
+}
+
+.nav-item {
+    font-size: 18px;
+}
+ 
+.bg-steel {
+    background-color: #5f788a;
+}
+  
+.site-header .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.nav-link:hover {
+    color: #cbd5db;
+}
+
+#nav-links {
+    margin-left: 16% !important;
+}
+
+.form-title {
+    margin-top: 6%;
+    text-align: center;
+}
+
+#content-container {
+    margin-bottom: 3%;
+    padding: 6%;
+    width: 70% !important;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    border: solid #eeeeee 2px;
+}
+
+#facebook-button {
+    background-color: #3b5998 !important;
+    border-color: #3b5998;
+}
+
+#linkedin-button {
+    background-color: #4875b4;
+    border-color: #4875b4;
+}
+
+#googleplus-button {
+    background-color: #db4a39;
+    border-color: #db4a39;
+    color: #ffffff !important;
+}
+
+footer {
+    color :#ffffff;
+}
+
+.footer-header {
+    color: #000000 !important;
+}
+
+.footer-link {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-link:hover {
+    color: #e6e6e6 !important;
+}

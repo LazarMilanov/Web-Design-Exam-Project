@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test AJAX</title>
+	<script type="text/javascript">
+		function capitalize(s) {
+    		return s[0].toUpperCase() + s.slice(1);
+		}
+
+		function myFunction() {
+			document.getElementById("lista").innerHTML = "";
+			if (document.getElementById("searchbox").value === "") {
+				let req = new XMLHttpRequest();		
+				req.onreadystatechange = function() {
+					if (req.readyState == 4 && req.status === 200) {
+						var jsonList = JSON.parse(req.responseText);
+						jsonList.forEach(function(element){
+							var node = document.createElement("LI");
+							var ordered = document.createElement("UL");
+							var orderednode1 = document.createElement("LI");
+							var orderednode2 = document.createElement("LI");
+							var orderednode3 = document.createElement("LI");
+							var orderednode4 = document.createElement("LI");
+							var textnodecity = document.createTextNode("City: " + element.city);
+							var textnodeairport = document.createTextNode("Airport: " + element.airport);
+							var textnodeprice = document.createTextNode("Price: " + element.price + " RSD");
+							if (element.return === true) {
+								var textnodereturn = document.createTextNode("Return: Yes");
+							} else {
+								var textnodereturn = document.createTextNode("Return: No");
+							}
+
+							orderednode1.append(textnodecity);
+							orderednode2.append(textnodeairport);
+							orderednode3.append(textnodeprice);
+							orderednode4.append(textnodereturn);
+							ordered.append(orderednode1);
+							ordered.append(orderednode2);
+							ordered.append(orderednode3);
+							ordered.append(orderednode4);
+							node.append(ordered);
+							document.getElementById("lista").append(node);
+						});
+					}						
+				}
+				req.open('GET', 'http://localhost:8000/city/all', true)
+				req.send();
+			} else {				
+				let req = new XMLHttpRequest();		
+				req.onreadystatechange = function() {
+					if (req.readyState == 4 && req.status === 200) {
+						var jsonList = JSON.parse(req.responseText);
+						var cityList = jsonList.filter(function(element){return element.city === document.getElementById('searchbox').value});
+						cityList.forEach(function(element){
+							var node = document.createElement("LI");
+							var ordered = document.createElement("UL");
+							var orderednode1 = document.createElement("LI");
+							var orderednode2 = document.createElement("LI");
+							var orderednode3 = document.createElement("LI");
+							var orderednode4 = document.createElement("LI");
+							var textnodecity = document.createTextNode("City: " + element.city);
+							var textnodeairport = document.createTextNode("Airport: " + element.airport);
+							var textnodeprice = document.createTextNode("Price: " + element.price + " RSD");
+							if (element.return === true) {
+								var textnodereturn = document.createTextNode("Return: Yes");
+							} else {
+								var textnodereturn = document.createTextNode("Return: No");
+							}
+
+							orderednode1.append(textnodecity);
+							orderednode2.append(textnodeairport);
+							orderednode3.append(textnodeprice);
+							orderednode4.append(textnodereturn);
+							ordered.append(orderednode1);
+							ordered.append(orderednode2);
+							ordered.append(orderednode3);
+							ordered.append(orderednode4);
+							node.append(ordered);
+							document.getElementById("lista").append(node);
+						});
+					}											
+				}
+				req.open('GET', 'http://localhost:8000/city/' + capitalize(document.getElementById('searchbox').value), true)
+				req.send();
+			}
+		}
+	</script>
+</head>
+<body onload="myFunction(document.getElementById('searchbox').value);">
+	Search: <input type="text" id="searchbox" name="search" onkeyup="myFunction()">
+	<br>
+	<ol id="lista"></ol>
+</body>
+</html>

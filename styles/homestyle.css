@@ -1,0 +1,368 @@
+body {
+    background: #ffffff !important;
+}
+  
+h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+}
+
+nav {
+    width: 100% !important;
+	box-shadow: 0 8px 6px -6px black;
+}
+
+.navbar-collapse {
+    margin-left: 30px;
+}
+
+.navbar-brand {
+	font-size: 25px;
+}
+
+.nav-item {
+	font-size: 18px;
+}
+ 
+.bg-steel {
+    background-color: #5f788a;
+}
+  
+.site-header .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.nav-link:hover {
+	color: #cbd5db;
+}
+
+#nav-links {
+    margin-left: 16% !important;
+}
+
+@media screen and (min-width: 801px) {
+    #booking-section {
+        background-image: url(../images/airserbia_sky_01.jpg);
+        background-size: cover;
+        background-position: center center;
+        padding-top: 6%;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        height: 630px;
+    }
+
+    .section-center {
+        width: 50%;
+        margin-left: 26.5%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #booking-section {
+        background-image: url(../images/airserbia_sky_01.jpg);
+        background-size: cover;
+        background-position: center center;
+        height: 1200px;
+        padding-top: 40px;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+    }
+
+    .section-center {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+#flight-header {
+    margin-left: 20px;
+}
+
+#form-container {
+    margin-top: 40px;
+}
+
+.choose {
+    width: 94%;
+}
+
+.choose h3 {
+    float: right;
+}
+
+#choose-form {
+    margin-bottom: 3px !important;
+}
+
+.booking-form {
+    background: rgba(0, 90, 255, 0.5);
+    padding: 40px;
+    border-radius: 6px;
+    width: 900px;
+}
+
+.booking-form .form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.booking-form .form-control {
+    background-color: #fff;
+    height: 30px;
+    color: #191a1e;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    box-shadow: none;
+    padding: 0px 25px;
+}
+
+.booking-form .form-control::placeholder {
+    color: rgba(82, 82, 84, 0.4);
+}
+
+.booking-form input[type="date"].form-control:invalid {
+    color: rgba(82, 82, 84, 0.4);
+}
+
+.booking-form .form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 24px;
+    height: 24px;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.form-checkbox input {
+    position: absolute !important;
+    margin-left: -9999px !important;
+    visibility: hidden !important;
+}
+
+.form-checkbox label {
+    position: relative;
+    padding-left: 30px;
+    font-weight: 400;
+    color: #000;
+}
+
+.form-checkbox label+label {
+    margin-left: 15px;
+}
+
+.form-checkbox input+span {
+    position: absolute;
+    left: 2px;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.form-checkbox input+span:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    background-color: #f23e3e;
+    transform: translate(-50%, -50%);
+}
+
+.form-checkbox input:not(:checked)+span:after {
+    opacity: 0;
+}
+
+.form-checkbox input:checked+span:after {
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+}
+
+.form-date {
+    padding-right: 3px !important;
+}
+
+.form-date-2 {
+    padding-left: 3px !important;
+}
+
+.booking-form .form-btn {
+    margin-top: 27px;
+}
+
+.booking-form .submit-btn {
+    color: #fff;
+    background-color: #dc3545;
+    font-weight: 400;
+    height: 33px;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    text-transform: uppercase;
+    transition: 0.2s all;
+}
+
+.booking-form .submit-btn:hover,
+.booking-form .submit-btn:focus {
+    opacity: 0.9;
+}
+
+#facebook-button {
+    background-color: #3b5998 !important;
+    border-color: #3b5998;
+}
+
+#linkedin-button {
+    background-color: #4875b4;
+    border-color: #4875b4;
+}
+
+#googleplus-button {
+    background-color: #db4a39;
+    border-color: #db4a39;
+    color: #ffffff !important;
+}
+
+footer {
+    color: #ffffff;
+}
+
+h2.underline {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.underline:after {
+    display: block;
+    margin: 1rem auto;
+    content: " ";
+    border-bottom: 1px solid #dc3545;
+    width: 2rem;
+}
+
+#booking-wrapper {
+    text-align: inherit;
+    padding-top: 87px;
+    padding-bottom: 30px;
+}
+
+#wrapper {
+    height: 300px;
+    max-width: 1200px;
+}
+
+#offers {
+    margin-bottom: 50px;
+}
+
+#offers-wrap {
+    text-align: center;
+}
+
+.offer-block {
+    display: inline-block;
+    padding: 0.3rem;
+}
+
+.offer {
+    width: 18rem;
+}
+
+.offer-title {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.list-group-item {
+    background-color: #fafafa !important;
+    border-color: #d8d8d8 !important;
+    color: #444444 !important;
+}
+
+.list-group-item:hover {
+    background-color: #eaeaea !important;
+    border-color: #d8d8d8 !important;
+    color: #444444 !important;
+}
+
+.list-group-item:active {
+    background-color: #dadada !important;
+    border-color: #d8d8d8 !important;
+    color: #444444 !important;
+}
+
+.left {
+    float: left;
+}
+
+.price {
+    float: right;
+}
+
+#destinations-container {
+    text-align: center;
+}
+
+#destinationtrack {
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 15px;
+}
+
+#destinations {
+    margin-bottom: 1%;
+}
+
+.destination-image {
+    max-width: 100%;
+}
+
+.image-container {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1; 
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  text-align: center;
+}
+
+.footer-header {
+    color: #000000 !important;
+}
+
+.footer-link {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-link:hover {
+    color: #e6e6e6 !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}

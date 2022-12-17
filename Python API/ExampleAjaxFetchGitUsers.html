@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<head>
+	<title>Fetch data from github (get users) using Ajax</title>
+	<script>
+	function getAPI(){
+		//Create the XHR Object
+		var req = new XMLHttpRequest();
+		
+		//implement on readyState change callback function
+		req.onreadystatechange = function() {
+				//check state is 4 (means server has responded and response is available) 
+				// and if the status is 200(means everything is okay)
+				if (req.readyState == 4 && req.status === 200) {
+						//return server response as an object with JSON.parse
+					var jsonObj = JSON.parse(req.responseText);
+					document.getElementById("message").innerHTML = jsonObj.message;
+					
+				}
+		}
+		//Call the open function, GET-type of request, url, true-asynchronous
+		req.open('GET', 'http://localhost:8000', true)
+		//call send
+		req.send();
+		//Common Types of HTTP Statuses
+		// 200: OK
+		// 404: ERROR
+		// 403: FORBIDDEN
+	}
+ 
+	</script>
+</head>
+<body>
+</body>
+	<div>
+		<button type="button" onclick="getAPI()">Get Message</button>
+	</div>
+	<p id="message"></p>
+</html>

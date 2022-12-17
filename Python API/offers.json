@@ -1,0 +1,122 @@
+[
+	{
+		"city": "Amsterdam",
+		"airport": "Belgrade",
+		"price": 8425,
+		"return": false
+	},
+	{
+		"city": "Amsterdam",
+		"airport": "Belgrade",
+		"price": 14042,
+		"return": true
+	},
+	{
+		"city": "Barcelona",
+		"airport": "Belgrade",
+		"price": 14089,
+		"return": true
+	},
+	{
+		"city": "Barcelona",
+		"airport": "Belgrade",
+		"price": 23482,
+		"return": true
+	},
+	{
+		"city": "Beirut",
+		"airport": "Belgrade",
+		"price": 23482,
+		"return": true
+	},
+	{
+		"city": "Brussels",
+		"airport": "Belgrade",
+		"price": 7717,
+		"return": false
+	},
+	{
+		"city": "Brussels",
+		"airport": "Belgrade",
+		"price": 12862,
+		"return": true
+	},
+	{
+		"city": "Copenhagen",
+		"airport": "Belgrade",
+		"price": 11965,
+		"return": false
+	},
+	{
+		"city": "Copenhagen",
+		"airport": "Belgrade",
+		"price": 19942,
+		"return": true
+	},
+	{
+		"city": "Amsterdam",
+		"airport": "Nis",
+		"price": 8425,
+		"return": false
+	},
+	{
+		"city": "Amsterdam",
+		"airport": "Nis",
+		"price": 14042,
+		"return": true
+	},
+	{
+		"city": "Barcelona",
+		"airport": "Nis",
+		"price": 14089,
+		"return": true
+	},
+	{
+		"city": "Barcelona",
+		"airport": "Nis",
+		"price": 23482,
+		"return": true
+	},
+	{
+		"city": "Beirut",
+		"airport": "Nis",
+		"price": 23482,
+		"return": true
+	},
+	{
+		"city": "Brussels",
+		"airport": "Nis",
+		"price": 7717,
+		"return": false
+	},
+	{
+		"city": "Brussels",
+		"airport": "Nis",
+		"price": 12862,
+		"return": true
+	},
+	{
+		"city": "Copenhagen",
+		"airport": "Nis",
+		"price": 11965,
+		"return": false
+	},
+	{
+		"city": "Copenhagen",
+		"airport": "Nis",
+		"price": 19942,
+		"return": true
+	},
+	{
+		"city": "Podgorica",
+		"airport": "Belgrade",
+		"price": 19942,
+		"return": true
+	},
+	{
+		"city": "Tivat",
+		"airport": "Belgrade",
+		"price": 19942,
+		"return": true
+	}
+]

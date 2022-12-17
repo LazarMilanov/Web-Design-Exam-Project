@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Air Belgrade</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+  		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+  		<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+  		<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+  		<link rel="stylesheet" type="text/css" href="styles/homestyle.css">
+  		<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
+  		<link rel="stylesheet" type="text/css" href="styles/glide.core.min.css">
+  		<link rel="stylesheet" type="text/css" href="styles/glide.theme.min.css">
+  		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  		
+	</head>
+	<body>
+		<header class="site-header">
+			<nav class="navbar navbar-expand-md navbar-dark bg-danger fixed-top">
+				<div class="container">
+					<div class="logo mr-5">
+						<a class="navbar-brand" href="index.html">AIR BELGRADE</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse" id="navbarToggle">
+						<div id="nav-links" class="navbar-nav">
+							<a class="navtablinks nav-item nav-link mr-1 ml-1" href="specialoffers.html">Special Offers</a>
+							<a class="navtablinks nav-item nav-link mr-1 ml-1" href="booking.html">Book</a>
+							<a class="navtablinks nav-item nav-link mr-1 ml-1" href="contact.html">Contact</a>
+							<a class="navtablinks nav-item nav-link mr-1 ml-1" href="about.html">About</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<div id="booking-section">
+			<div class="section-center">
+				<div class="choose">
+					<form>
+						<div class="form-group" id="choose-form">
+							<div class="form-checkbox">
+								<label for="flightradio">
+										<input class="tablinks" type="radio" id="flightradio" name="select" onclick="openTab(event, 'flight');" checked>
+										<span></span>Flight
+								</label>
+								<label for="hotelradio">
+										<input class="tablinks" type="radio" id="hotelradio" name="select" onclick="openTab(event, 'hotel');">
+										<span></span>Hotel
+								</label>
+								<label for="rentalcarradio">
+										<input class="tablinks" type="radio" id="rentalcarradio" name="select" onclick="openTab(event, 'car');">
+										<span></span>Rental car
+								</label>
+								<h3 id="opened-tab">Find flight</h3>
+							</div>
+						</div>
+					</form>							
+				</div>
+				<div class="booking-form active" id="flight" style="display: block;">
+					<form action="action.php" onsubmit="return validateFind();">
+						<div class="form-group">
+							<div class="form-checkbox">
+								<label for="roundtrip">
+									<input type="radio" id="roundtrip" name="flight-type" checked>
+									<span></span>Roundtrip
+								</label>
+								<label for="one-way">
+									<input type="radio" id="one-way" name="flight-type">
+									<span></span>One way
+								</label>
+								<label for="multi-city">
+									<input type="radio" id="multi-city" name="flight-type">
+									<span></span>Multi-City
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<span class="form-label">Flying from</span>
+									<input id="flying-from-find" class="form-control" type="text" placeholder="City or airport">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<span class="form-label">Flying to</span>
+									<input id="flying-to-find" class="form-control" type="text" placeholder="City or airport">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3 form-date">
+								<div class="form-group">
+									<span class="form-label">Departing</span>
+									<input class="form-control form-date" type="date" required>
+								</div>
+							</div>
+							<div class="col-md-3 form-date-2">
+								<div class="form-group">
+									<span class="form-label">Returning</span>
+									<input class="form-control form-date" type="date" required>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<span class="form-label">Adults</span>
+									<input id="adult-number-find" class="form-control" type="number" value="1" required>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<span class="form-label">Children</span>
+									<input id="children-number-find" class="form-control" type="number" value="0" required></input>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label">Travel class</span>
+									<select class="form-control">
+										<option>Economy class</option>
+										<option>Business class</option>
+										<option>First class</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-btn">
+									<button type="submit" class="submit-btn">Find flight</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="booking-form" id="hotel" style="display: none;">
+					<form action="action.php" onsubmit="return validateHotel();">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<span class="form-label">City</span>
+									<input id="hotel-city" class="form-control" type="text" placeholder="City or airport">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label">Check in</span>
+									<input class="form-control" type="date" required>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label">Check out</span>
+									<input class="form-control" type="date" required>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<span class="form-label">People</span>
+									<input id="hotel-people" class="form-control" type="number"  value="1" required>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<div class="form-btn">
+									<button class="submit-btn">Find hotel</button>
+								</div>
+							</div>
+						</div>								
+					</form>
+				</div>
+				<div class="booking-form" id="car" style="display: none;">
+					<form action="action.php" onsubmit="return validateCar();">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<span class="form-label">Pick-up</span>
+									<input id="pick-up" class="form-control" type="text" placeholder="City or airport">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label">Date</span>
+									<input class="form-control" type="date" required>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<span class="form-label">Time</span>
+									<input id="time1" class="form-control" type="text" required>
+								</div>
+							</div>
+						</div>								
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<span class="form-label">Drop-off</span>
+									<input id="drop-off" class="form-control" type="text" placeholder="City or airport">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label">Date</span>
+									<input class="form-control" type="date" required>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<span class="form-label">Time</span>
+									<input id="time2" class="form-control" type="text" required>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<div class="form-btn">
+									<button class="submit-btn">Rent car</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="offers">
+			<div class="container" id="offer-container">
+				<h2 class="underline">Special offers</h2>
+				<div class="container" id="offers-wrap">
+					<div class="offer-block">
+						<div class="offer">
+							<img src="images/plane.jpg">
+							<h4 class="offer-title">Flights from Belgrade</h4>
+							<div class="list-group">
+								<a class="list-group-item" href="#">
+									<div class="left">
+										<div class="offer-trip"><small>Return flight</small></div>
+										<div class="offer-trip"><strong><h4>Amsterdam</h4></strong></div>
+										<div class="offer-trip">From: Belgrade</div>
+									</div>
+									<div class="price">
+										<div class="offer-currency"><small>RSD</small></div>
+										<div class="offer-amount"><h4>14042</h4></div>
+									</div>
+								</a>
+								<a class="list-group-item" href="#">
+									<div class="left">
+										<div class="offer-trip"><small>Return flight</small></div>
+										<div class="offer-trip"><strong><h4>Brussels</h4></strong></div>
+										<div class="offer-trip">From: Belgrade</div>
+									</div>
+									<div class="price">
+										<div class="offer-currency"><small>RSD</small></div>
+										<div class="offer-amount"><h4>12862</h4></div>
+									</div>
+								</a>
+								<a class="list-group-item" href="#">
+									<div class="left">
+										<div class="offer-trip"><small>Return flight</small></div>
+										<div class="offer-trip"><strong><h4>Barcelona</h4></strong></div>
+										<div class="offer-trip">From: Belgrade</div>
+									</div>
+									<div class="price">
+										<div class="offer-currency"><small>RSD</small></div>
+										<div class="offer-amount"><h4>23482</h4></div>
+									</div>
+								</a>
+								<a class="list-group-item" href="#">
+									<div class="left">
+										<div class="offer-trip"><small>Return flight</small></div>
+										<div class="offer-trip"><strong><h4>Beirut</h4></strong></div>
+										<div class="offer-trip">From: Belgrade</div>
+									</div>
+									<div class="price">
+										<div class="offer-currency"><small>RSD</small></div>
+										<div class="offer-amount"><h4>23482</h4></div>
+									</div>
+								</a>
+								<a class="list-group-item" href="#">
+									<div class="left">
+										<div class="offer-trip"><small>Return flight</small></div>
+										<div class="offer-trip"><strong><h4>Copenhagen</h4></strong></div>
+										<div class="offer-trip">From: Belgrade</div>
+									</div>
+									<div class="price">
+										<div class="offer-currency"><small>RSD</small></div>
+										<div class="offer-amount"><h4>19942</h4></div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="offer-block">
+						<div class="offer">
+							<img src="images/nis.jpg">
+							<h4 class="offer-title">Flights from Nis</h4>
+							<div class="list-group">
+								<a class="list-group-item" href="#">
+									<div class="left">
+										<div class="offer-trip"><small>Return flight</small></div>
+										<div class="offer-trip"><strong><h4>Amsterdam</h4></strong></div>
+										<div class="offer-trip">From: Niš</div>
+									</div>
+									<div class="price">
+										<div class="offer-currency"><small>RSD</small></div>
+										<div class="offer-amount"><h4>14042</h4></div>
+									</div>
+								</a>
+								<a class="list-group-item" href="#">
+									<div class="left">
+										<div class="offer-trip"><small>Return flight</small></div>
+										<div class="offer-trip"><strong><h4>Brussels</h4></strong></div>
+										<div class="offer-trip">From: Niš</div>
+									</div>
+									<div class="price">
+										<div class="offer-currency"><small>RSD</small></div>
+										<div class="offer-amount"><h4>12862</h4></div>
+									</div>
+								</a>
+								<a class="list-group-item" href="#">
+									<div class="left">
+										<div class="offer-trip"><small>Return flight</small></div>
+										<div class="offer-trip"><strong><h4>Barcelona</h4></strong></div>
+										<div class="offer-trip">From: Niš</div>
+									</div>
+									<div class="price">
+										<div class="offer-currency"><small>RSD</small></div>
+										<div class="offer-amount"><h4>23482</h4></div>
+									</div>
+								</a>
+								<a class="list-group-item" href="#">
+									<div class="left">
+										<div class="offer-trip"><small>Return flight</small></div>
+										<div class="offer-trip"><strong><h4>Beirut</h4></strong></div>
+										<div class="offer-trip">From: Niš</div>
+									</div>
+									<div class="price">
+										<div class="offer-currency"><small>RSD</small></div>
+										<div class="offer-amount"><h4>23482</h4></div>
+									</div>
+								</a>
+								<a class="list-group-item" href="#">
+									<div class="left">
+										<div class="offer-trip"><small>Return flight</small></div>
+										<div class="offer-trip"><strong><h4>Copenhagen</h4></strong></div>
+										<div class="offer-trip">From: Niš</div>
+									</div>
+									<div class="price">
+										<div class="offer-currency"><small>RSD</small></div>
+										<div class="offer-amount"><h4>19942</h4></div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="offer-block">
+						<div class="offer">
+							<img src="images/montenegro.jpg">
+							<h4 class="offer-title">Flights to Montenegro</h4>
+							<div class="list-group">
+								<a class="list-group-item" href="#">
+									<div class="left">
+										<div class="offer-trip"><small>Return flight</small></div>
+										<div class="offer-trip"><strong><h4>Podgorica</h4></strong></div>
+										<div class="offer-trip">From: Belgrade</div>
+									</div>
+									<div class="price">
+										<div class="offer-currency"><small>RSD</small></div>
+										<div class="offer-amount"><h4>12480</h4></div>
+									</div>
+								</a>
+								<a class="list-group-item" href="#">
+									<div class="left">
+										<div class="offer-trip"><small>Return flight</small></div>
+										<div class="offer-trip"><strong><h4>Tivat</h4></strong></div>
+										<div class="offer-trip">From: Belgrade</div>
+									</div>
+									<div class="price">
+										<div class="offer-currency"><small>RSD</small></div>
+										<div class="offer-amount"><h4>12480</h4></div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="destinations">
+			<h2 class="underline">Popular destinations</h2>
+			<div class="glide">
+			  	<div class="glide__track" data-glide-el="track" id="destinationtrack">			  		
+			    	<ul class="glide__slides">
+			      		<li class="glide__slide"><div class="image-container"><img src="images/amsterdam.jpg" class="destination-image"><div class="overlay">Amsterdam</div></div></li>
+			      		<li class="glide__slide"><div class="image-container"><img src="images/brussels.jpg" class="destination-image"><div class="overlay">Brussels</div></div></li>
+			      		<li class="glide__slide"><div class="image-container"><img src="images/barcelona.jpg" class="destination-image"><div class="overlay">Barcelona</div></div></li>
+			      		<li class="glide__slide"><div class="image-container"><img src="images/copenhagen.jpg" class="destination-image"><div class="overlay">Copenhagen</div></div></li>
+			      		<li class="glide__slide"><div class="image-container"><img src="images/tivat.jpg" class="destination-image"><div class="overlay">Tivat</div></div></li>
+			      		<li class="glide__slide"><div class="image-container"><img src="images/podgorica.jpg" class="destination-image"><div class="overlay">Podgorica</div></div></li>
+			    	</ul>				    	
+			  	</div>
+			  	<div class="glide__arrows" data-glide-el="controls">
+					<button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-angle-left"></i></button>
+					<button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-angle-right"></i></button>
+				</div>
+			</div>
+		</div>
+		<footer class="bg-danger page-footer font-small pt-4">
+		  	<div class="container text-center text-md-left">
+		    	<div class="row text-center text-md-left mt-3 pb-3">
+		      		<div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+		        		<h6 class="text-uppercase mb-4 font-weight-bold footer-header">Air Belgrade</h6>
+		        			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		      		</div>
+		      		<hr class="w-100 clearfix d-md-none">
+		      		<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+		        		<h6 class="text-uppercase mb-4 font-weight-bold footer-header">Products</h6>
+		        		<p>
+		         			<a class="footer-link" href="#">Lorem</a>
+		        		</p>
+		        		<p>
+		          			<a class="footer-link" href="#">Ipsum</a>
+		        		</p>
+		        		<p>
+		          			<a class="footer-link" href="#">Dolor</a>
+		        		</p>
+		        		<p>
+		          			<a class="footer-link" href="#">Sit Amet</a>
+		        		</p>
+		      		</div>		      
+		      		<hr class="w-100 clearfix d-md-none">
+		      		<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+		        		<h6 class="text-uppercase mb-4 font-weight-bold footer-header">Useful links</h6>
+		        		<p>
+		          			<a class="footer-link" href="#">Lorem Ipsum</a>
+		        		</p>
+		        		<p>
+		          			<a class="footer-link" href="#">Dolor Sit</a>
+		        		</p>
+		        		<p>
+		          			<a class="footer-link" href="#">Amet consectetur</a>
+		        		</p>
+		        		<p>
+		          			<a class="footer-link" href="#">Adipisicing</a>
+		        		</p>
+		      		</div>
+		      		<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+		        		<h6 class="text-uppercase mb-4 font-weight-bold footer-header">Contact</h6>
+		        		<p>
+		          			<i class="fas fa-home mr-3"></i> Belgrade, Surčin 11271, Serbia</p>
+		        		<p>
+		          			<i class="fas fa-envelope mr-3"></i> airbelgrade@gmail.com</p>
+		        		<p>
+		          			<i class="fas fa-phone mr-3"></i> + 381 234 567 88</p>
+		        		<p>
+		          			<i class="fas fa-print mr-3"></i> + 381 234 567 89</p>
+		      		</div>
+		    	</div>
+		    	<hr>
+		    	<div class="row d-flex align-items-center">
+		      		<div class="col-md-7 col-lg-8">
+		        		<p class="text-center text-md-left">© 2020 Copyright:
+		          			<a class="footer-link" href="#">
+		            			<strong> Air Belgrade</strong>
+		          			</a>
+		        		</p>
+
+		      		</div>
+		      		<div class="col-md-5 col-lg-4 ml-lg-0">
+		        		<div class="text-center text-md-right">
+		          			<ul class="list-unstyled list-inline">
+		            			<li class="list-inline-item">
+		              				<button class="btn btn-primary bmd-btn-fab mx-1" id="facebook-button">
+		                				<i class="fab fa-facebook-f"></i>
+		              				</button>
+		            			</li>
+		            			<li class="list-inline-item">
+		              				<button class="btn btn-info bmd-btn-fab mx-1">
+		                				<i class="fab fa-twitter"></i>
+		              				</button>
+		            			</li>
+		            			<li class="list-inline-item">
+		              				<button id="googleplus-button" class="btn btn-warning bmd-btn-fab mx-1">
+		                				<i class="fab fa-google-plus-g"></i>
+		              				</button>
+		            			</li>
+		            			<li class="list-inline-item">
+		              				<button class="btn btn-info bmd-btn-fab mx-1" id="linkedin-button">
+		                				<i class="fab fa-linkedin-in"></i>
+		              				</button>
+		            			</li>
+		          			</ul>
+		        		</div>
+					</div>
+		    	</div>
+		  	</div>
+		</footer>		
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jFromo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+		<script>
+			const config = {
+				type: 'carousel',
+				focusAt: 'center',
+				perView: 6,				
+				breakpoints: {
+					600: {
+						perView: 1.2
+					}
+				}
+			}
+  			new Glide('.glide', config).mount();
+		</script>
+		<script type="text/javascript" src="scripts/script.js"></script>
+	</body>
+</html>
